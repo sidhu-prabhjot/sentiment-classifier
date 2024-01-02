@@ -160,6 +160,22 @@ function Main() {
     }
   };
 
+  //event listener for beforeunload
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      // Display a warning message when the user tries to reload the page
+      event.returnValue =
+        "You will be prompted to log in again if you reload the page.";
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <Container fluid style={{ backgroundColor: "#2b3035" }}>
       <Navbar className="bg-body-tertiary" data-bs-theme="dark">
