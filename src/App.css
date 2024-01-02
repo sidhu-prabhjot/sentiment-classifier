@@ -1,0 +1,137 @@
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.selection-row {
+  background-color: #2b3035; /* Set the background color to black */
+  color: white; /* Set the text color to white or any contrasting color */
+  padding-bottom: 20px; /* Add padding to create space between content and edges */
+  padding-top: 40px;
+}
+
+.form-row {
+  background-color: #3e444a; /* Set the background color to black */
+  color: white; /* Set the text color to white or any contrasting color */
+  padding-bottom: 20px; /* Add padding to create space between content and edges */
+  padding-top: 20px;
+}
+
+.button-spinner-row {
+  display: flex;
+  justify-content: center;
+}
+
+.submission-button {
+  margin-bottom: 16px;
+}
+
+.submit-spinner-container {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feedback-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-popup-container {
+  justify-content: center;
+}
+
+.alert-text {
+  text-align: center;
+}
+
+.submit-form-button {
+  margin-bottom: 20px;
+}
+
+.learn-more-row {
+  background-color: #373d43; /* Set the background color to black */
+  color: white; /* Set the text color to white or any contrasting color */
+  padding-bottom: 20px; /* Add padding to create space between content and edges */
+  padding-top: 20px;
+}
+
+.about-row {
+  background-color: #2d3136; /* Set the background color to black */
+  color: white; /* Set the text color to white or any contrasting color */
+  padding-bottom: 20px; /* Add padding to create space between content and edges */
+  padding-top: 20px;
+}
+
+.footer-row {
+  padding: 20px 0px 20px 0px;
+  background-color: #3e444a;
+}
+
+.footer-column {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.info-card-column {
+  display: flex;
+  justify-content: center;
+}
+
+.section-subtext {
+  padding: 40px 0px 20px 0px;
+  text-align: center;
+}
+
+.about-accordion {
+  padding: 0px 20px 20px 20px;
+}
+
+.non-link-text {
+  color: white;
+}
+
+/*login page styling*/
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-row {
+  display: flex;
+  justify-content: center;
+  background-color: #2b3035; /* Set the background color to black */
+  color: white; /* Set the text color to white or any contrasting color */
+  padding-bottom: 20px; /* Add padding to create space between content and edges */
+  padding-top: 40px;
+}
+
+.subtext-row {
+  display: flex;
+  justify-content: center;
+  color: white; /* Set the text color to white or any contrasting color */
+}
+
+.login-subtext {
+  text-align: center;
+}
+
+.login-button,
+.signUp-button {
+  margin-bottom: 20px;
+}
