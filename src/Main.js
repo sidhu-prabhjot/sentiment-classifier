@@ -33,7 +33,6 @@ const handlePredictRequest = async (reviewData) => {
 
     const data = await response.json();
     const prediction = data.predictions[0][0];
-    console.log("Response from server:", prediction);
     return prediction;
   } catch (error) {
     console.error("Error:", error);
@@ -52,7 +51,6 @@ const handleSaveToDatabaseRequest = async (feedbackData) => {
     });
 
     const data = await response.json();
-    console.log("Response from server:", data);
     return data;
   } catch (error) {
     console.error("Error:", error);
@@ -76,9 +74,7 @@ function Main() {
   const [selectedOption, setSelectedOption] = useState("correct");
 
   //watch for changes in state
-  useEffect(() => {
-    console.log(selectedOption);
-  }, [selectedOption]);
+  useEffect(() => {}, [selectedOption]);
 
   //handle textArea state change
   const handleTextAreaChange = (event) => {
@@ -95,7 +91,6 @@ function Main() {
   //submit a review handler
   const handleSubmitPredict = async (event) => {
     event.preventDefault();
-    console.log("Textarea Value:", textAreaValue);
     setDisplayLoading("flex");
 
     try {
