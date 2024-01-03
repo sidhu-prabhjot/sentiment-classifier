@@ -63,7 +63,6 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
         .then((userCredential) => {
           // Signed up
-          const user = userCredential.user;
           setAlertType("success");
           setAlertHeading("Successfully Created Account");
           setAlertText(
@@ -72,8 +71,6 @@ const Login = () => {
           setDisplayAlert("flex");
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           setAlertType("danger");
           setAlertHeading("Unable To Sign Up");
           setAlertText("please make sure that your email is valid!");
@@ -93,14 +90,11 @@ const Login = () => {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
         // Signed up
-        const user = userCredential.user;
         localStorage.setItem("email", JSON.stringify(auth.currentUser.email));
         // Navigate to the home page after successful signup
         navigate("/home");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
         setAlertType("danger");
         setAlertHeading("Invalid Credentials");
         setAlertText(

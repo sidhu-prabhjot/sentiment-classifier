@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./App.css";
-import { getAuth } from "firebase/auth";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
