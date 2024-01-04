@@ -21,7 +21,7 @@ const handlePredictRequest = async (reviewData) => {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:4000/predict", {
+    const response = await fetch("/api/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const handlePredictRequest = async (reviewData) => {
 
 const handleSaveToDatabaseRequest = async (feedbackData) => {
   try {
-    const response = await fetch("http://127.0.0.1:4000/saveToDatabase", {
+    const response = await fetch("/api/saveToDatabase", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
