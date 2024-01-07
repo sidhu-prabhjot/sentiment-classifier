@@ -5,7 +5,7 @@ module.exports = function (app) {
   app.use(
     "/api", // specify the endpoint to proxy
     createProxyMiddleware({
-      target: "https://fa99-204-237-3-28.ngrok-free.app", // specify the address of your Python server
+      target: "http://127.0.0.1:4000", // specify the address of your Python server
       changeOrigin: true,
     })
   );

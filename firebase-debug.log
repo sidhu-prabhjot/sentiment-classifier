@@ -1,0 +1,70 @@
+[debug] [2024-01-05T02:46:55.060Z] ----------------------------------------------------------------------
+[debug] [2024-01-05T02:46:55.062Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Prabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions
+[debug] [2024-01-05T02:46:55.062Z] CLI Version:   13.0.2
+[debug] [2024-01-05T02:46:55.062Z] Platform:      win32
+[debug] [2024-01-05T02:46:55.063Z] Node Version:  v18.16.0
+[debug] [2024-01-05T02:46:55.064Z] Time:          Thu Jan 04 2024 21:46:55 GMT-0500 (Eastern Standard Time)
+[debug] [2024-01-05T02:46:55.064Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-05T02:46:55.072Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-05T02:46:55.072Z] > authorizing via signed-in user (sidhu.prabhjot.2003@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\MachineLearning\sentiment_classification\sentiment-classifier
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-01-05T02:47:00.322Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-01-05T02:47:01.121Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-01-05T02:47:01.121Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project universal-sidhu-authentication (universal sidhu authentication) 
+[info] 
+=== Functions Setup
+[debug] [2024-01-05T02:47:02.771Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-05T02:47:02.772Z] > authorizing via signed-in user (sidhu.prabhjot.2003@gmail.com)
+[debug] [2024-01-05T02:47:02.772Z] [iam] checking project universal-sidhu-authentication for permissions ["firebase.projects.get"]
+[debug] [2024-01-05T02:47:02.772Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/universal-sidhu-authentication:testIamPermissions [none]
+[debug] [2024-01-05T02:47:02.772Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/universal-sidhu-authentication:testIamPermissions x-goog-quota-user=projects/universal-sidhu-authentication
+[debug] [2024-01-05T02:47:02.773Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/universal-sidhu-authentication:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-01-05T02:47:03.157Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/universal-sidhu-authentication:testIamPermissions 200
+[debug] [2024-01-05T02:47:03.157Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/universal-sidhu-authentication:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-01-05T02:47:03.159Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-05T02:47:03.159Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/universal-sidhu-authentication
+[debug] [2024-01-05T02:47:03.163Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-05T02:47:03.164Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/universal-sidhu-authentication
+[debug] [2024-01-05T02:47:03.737Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-05T02:47:03.737Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-05T02:47:03.740Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-05T02:47:03.740Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/universal-sidhu-authentication/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/requirements.txt 
+[info] +  Wrote functions/.gitignore 
+[info] +  Wrote functions/main.py 
+[debug] [2024-01-05T02:47:24.635Z] Running command with virtualenv: command="D:\MachineLearning\sentiment_classification\sentiment-classifier\functions\venv\Scripts\activate.bat", args=["","&&","pip3","install","--upgrade","pip"]
+[debug] [2024-01-05T02:47:30.898Z] Error: spawn "D:\MachineLearning\sentiment_classification\sentiment-classifier\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\Prabh\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\Prabh\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\Prabh\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:291:12)
+[error] 
+[error] Error: An unexpected error has occurred.

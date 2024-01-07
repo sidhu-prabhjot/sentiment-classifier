@@ -17,20 +17,24 @@ import AlertPopup from "../src/components/AlertPopup";
 
 const handlePredictRequest = async (reviewData) => {
   const postData = {
-    examples: reviewData,
+    reviews: reviewData,
   };
 
   try {
-    const response = await fetch("/api/predict", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(postData),
-    });
+    const response = await fetch(
+      "https://us-east1-universal-sidhu-authentication.cloudfunctions.net/predict",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      }
+    );
 
     const data = await response.json();
-    const prediction = data.predictions[0][0];
+    const prediction = parseFloat(data.prediction);
+    console.log(prediction);
     return prediction;
   } catch (error) {
     console.error("Error:", error);
@@ -70,6 +74,7 @@ function Main() {
   const [popupType, setPopupType] = useState("success");
   const [displayPopup, setDisplayPopup] = useState("none");
   const [selectedOption, setSelectedOption] = useState("correct");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   //watch for changes in state
   useEffect(() => {}, [selectedOption]);
@@ -88,6 +93,12 @@ function Main() {
 
   //submit a review handler
   const handleSubmitPredict = async (event) => {
+    setIsDisabled(true);
+
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, 5000);
+
     event.preventDefault();
     setDisplayLoading("flex");
 
@@ -231,6 +242,7 @@ function Main() {
               variant="outline-success"
               size="lg"
               onClick={handleSubmitPredict}
+              disabled={isDisabled}
             >
               Submit
             </Button>
