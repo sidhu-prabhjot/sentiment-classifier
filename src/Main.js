@@ -34,7 +34,6 @@ const handlePredictRequest = async (reviewData) => {
 
     const data = await response.json();
     const prediction = parseFloat(data.prediction);
-    console.log(prediction);
     return prediction;
   } catch (error) {
     console.error("Error:", error);
@@ -44,16 +43,16 @@ const handlePredictRequest = async (reviewData) => {
 
 const handleSaveToDatabaseRequest = async (feedbackData) => {
   try {
-    const response = await fetch("/api/saveToDatabase", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(feedbackData),
-    });
-
-    const data = await response.json();
-    return data;
+    const response = await fetch(
+      "https://jnm6n6y5nkwth5coulhri3334m0kpnof.lambda-url.us-east-1.on.aws/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(feedbackData),
+      }
+    );
   } catch (error) {
     console.error("Error:", error);
     throw error; // Propagate the error up the chain
@@ -97,7 +96,7 @@ function Main() {
 
     setTimeout(() => {
       setIsDisabled(false);
-    }, 5000);
+    }, 10000); // 10 seconds in milliseconds
 
     event.preventDefault();
     setDisplayLoading("flex");
@@ -153,12 +152,13 @@ function Main() {
     const dataObject = {
       email: email,
       review: review,
-      sentiment: sentiment,
+      predicted: sentiment,
       correct: correct,
     };
 
     try {
       handleSaveToDatabaseRequest(dataObject);
+      setDisplayPopup("none");
     } catch (error) {
       console.error("Error in handleSubmitFeedback:" + error);
     }
@@ -220,6 +220,9 @@ function Main() {
       </Row>
       <Row className="form-row">
         <h1>Sentiment Classifier</h1>
+        <p className="subtext">
+          First submission may take longer to load than the next ones*
+        </p>
         <Col></Col>
         <Col xs={6}>
           <Form data-bs-theme="dark">
@@ -389,10 +392,14 @@ function Main() {
                 <p>Frameworks and Services</p>
                 <ul>
                   <li>Google Tensorflow</li>
+                  <li>Google Cloud Functions</li>
+                  <li>Google Cloud Storage</li>
+                  <li>AWS Lambda</li>
+                  <li>AWS Dynamo DB</li>
+                  <li>AWS Amplify</li>
                   <li>React JS</li>
                   <li>Bootstrap</li>
-                  <li>SQLite</li>
-                  <li>Firebase</li>
+                  <li>Firebase Authentication</li>
                 </ul>
               </Accordion.Body>
             </Accordion.Item>
