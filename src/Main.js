@@ -34,6 +34,7 @@ const handlePredictRequest = async (reviewData) => {
 
     const data = await response.json();
     const prediction = parseFloat(data.prediction);
+    console.log("successful prediction");
     return prediction;
   } catch (error) {
     console.error("Error:", error);
@@ -53,6 +54,7 @@ const handleSaveToDatabaseRequest = async (feedbackData) => {
         body: JSON.stringify(feedbackData),
       }
     );
+    console.log("successful save to database");
   } catch (error) {
     console.error("Error:", error);
     throw error; // Propagate the error up the chain
